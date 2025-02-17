@@ -6,3 +6,9 @@ debug
 foo.*
 *.log
 data
+*.DS_Store
+.DS_Store
+tags
+tags
+**/.DS_Store
+.DS_Store
