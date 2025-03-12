@@ -2,12 +2,11 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config.font_size = 16
-config.font = wezterm.font("JetBrains Mono")
+config.font = wezterm.font("FiraCode Nerd Font")
 config.automatically_reload_config = true
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.adjust_window_size_when_changing_font_size = false
-config.harfbuzz_features = { "calt=0" }
 config.max_fps = 120
 config.enable_kitty_graphics = true
 config.window_close_confirmation = "NeverPrompt"
@@ -24,16 +23,6 @@ config.window_padding = {
 
 -- Key bindings delete word
 config.keys = {
-	{
-		key = "LeftArrow",
-		mods = "OPT",
-		action = wezterm.action({ SendString = "\x1bb" }),
-	},
-	{
-		key = "RightArrow",
-		mods = "OPT",
-		action = wezterm.action({ SendString = "\x1bf" }),
-	},
 	{
 		key = "}",
 		mods = "OPT",

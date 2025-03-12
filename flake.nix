@@ -12,23 +12,22 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "aarch64-darwin";  # Aquí se cambia el SO      pkgs = import nixpkgs { inherit system; };
+      system = "aarch64-darwin";  # Aquí se cambia el SO
+      pkgs = import nixpkgs { inherit system; };
     in {
       homeConfigurations = {
         "mrcajuka" =
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [
-              ./nushell.nix  
-              ./ghostty.nix  
               ./wezterm.nix  
-              # ./zellij.nix   
-              ./fish.nix
+              ./zellij.nix   
+              ./zsh.nix
               ./starship.nix 
               ./nvim.nix     
               {
                 # Datos personales
-                home.username = "mrcajuk";
+                home.username = "mrcajuka";
                 home.homeDirectory = "/Users/mrcajuka/";
                 home.stateVersion = "24.11";
 
@@ -38,18 +37,16 @@
                   zsh
 
                   # ─── Herramientas de desarrollo ───
-                  #volta
-                  #carapace
                   zoxide
                   atuin
-                  #jq
                   bash
                   starship
                   fzf
                   neovim
-                  #nodejs
                   lazygit
                   bun
+                  cargo
+                  fnm
 
                   # ─── Compiladores y utilidades de sistema ───
                   gcc
