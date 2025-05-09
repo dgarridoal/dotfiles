@@ -20,11 +20,14 @@
           home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [
-              ./wezterm.nix  
-              ./zellij.nix   
+              ./fish.nix
+              ./ghostty.nix
+              ./lazygit.nix
+              ./nvim.nix
+              ./starship.nix
+              ./wezterm.nix
+              ./zellij.nix
               ./zsh.nix
-              ./starship.nix 
-              ./nvim.nix     
               {
                 # Datos personales
                 home.username = "mrcajuka";
@@ -34,6 +37,7 @@
                 home.packages = with pkgs; [
                   # ─── Terminals y utilidades ───
                   zellij
+                  fish
                   zsh
 
                   # ─── Herramientas de desarrollo ───
